@@ -32,40 +32,40 @@
 
         /* Header - White background with green text */
         .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    background-color: #ffffff;
-    color: var(--primary-color);
-    padding: 20px;
-    border-bottom: 4px solid var(--primary-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            padding: 20px;
+            border-bottom: 4px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-.logo img {
-    height: 140px;
-    width: auto;
-}
+        .logo img {
+            height: 140px;
+            width: auto;
+        }
 
-.header-text {
-    text-align: left;
-}
+        .header-text {
+            text-align: left;
+        }
 
-.header-text h1 {
-    margin: 0;
-    font-size: 2.2rem;
-}
+        .header-text h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
 
-.header-text h3 {
-    margin-top: 8px;
-    color: #555;
-    font-weight: 500;
-}
+        .header-text h3 {
+            margin-top: 8px;
+            color: #555;
+            font-weight: 500;
+        }
 
-.header span {
-    font-size: 22px;
-}
+        .header span {
+            font-size: 22px;
+        }
 
 
         /* Navigation */
@@ -279,7 +279,217 @@
             }
         }
 
-        
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Tablet devices (768px and below) */
+        @media (max-width: 768px) {
+
+            /* Header adjustments */
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-text h3 {
+                font-size: 1rem;
+            }
+
+            .header span {
+                display: none;
+                /* Hide the line on smaller screens */
+            }
+
+            /* Navigation */
+            nav {
+                padding: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1rem;
+                padding: 5px 0;
+            }
+
+            /* Hero section */
+            .hero {
+                height: 250px;
+                padding: 0 15px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            /* Equipment grid */
+            .equipment-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .card-img-real {
+                height: 180px;
+            }
+
+            /* Form section */
+            .form-section {
+                padding: 25px;
+            }
+
+            .container {
+                margin: 25px auto;
+                padding: 0 15px;
+            }
+        }
+
+        /* Mobile devices (480px and below) */
+        @media (max-width: 480px) {
+
+            /* Header */
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-text h3 {
+                font-size: 0.9rem;
+            }
+
+            .logo img {
+                height: 80px;
+            }
+
+            /* Navigation */
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav a {
+                margin: 0;
+                padding: 8px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* Hero section */
+            .hero {
+                height: 200px;
+            }
+
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* Section title */
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+
+            /* Equipment grid - single column */
+            .equipment-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .card-img-real {
+                height: 160px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            /* Form adjustments */
+            .form-section {
+                padding: 20px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 20px;
+            }
+
+            footer h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Small mobile devices (360px and below) */
+        @media (max-width: 360px) {
+            .header-text h1 {
+                font-size: 1.3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .card-content {
+                padding: 15px;
+            }
+        }
+
+        /* Prevent horizontal scrolling on very small screens */
+        @media (max-width: 320px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+
+        /* Fix for tablet landscape and larger phones */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Add viewport meta tag for better mobile rendering (already present) */
+        /* Ensure images don't overflow */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
